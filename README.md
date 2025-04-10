@@ -1,2 +1,6 @@
 # EGN3000L
 Code for the final project wall following robot
+By Noah Galdona
+
+This code is used to run the robot through the arduino. It starts by initializing all required variables and assigning pins for the various components attached to the Arduino. The main loop the robot follows an initial check of both sensors to measure distance from the front and left wall, then proceeds through an if-else block to determine its next move, depending on the measured values. The first block is if the front of the robot is too close to the wall, in which case it activates the wheels to move backwards until it reaches an acceptable distance. If the wall is a little further away, it will enter the turning function which simply has it turn 90 degrees to either the left if no wall is detected there, otherwise clockwise to the right. If there is still a wall there, as in a dead end, it will simply enter the turn_time() function again to go back the way it came. Finally, if no wall is detected in front, it will continue forward unless there is no wall to the left, in which case it will turn left as this is a left-wall following robot. For both the first and second block, the robot’s buzzer will activate, but any other state it will deactivate.
+
